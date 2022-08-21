@@ -10,19 +10,19 @@ const settings = {
 };
 
 const params = {
-  cols: 10,
-  rows: 10,
-  scaleMin: 1,
-  scaleMax: 30,
-  freq: 0.001,
-  amp: 0.2,
+  cols: 24,
+  rows: 200,
+  scaleMin: 3.15,
+  scaleMax: 1,
+  freq: 0.0005,
+  amp: 5.22,
   lineCap: 'Butt',
   frame: 0,
   animate: true,
-  speed: 60,
-  stroke: 0.5,
-  strokeColor: 'rgba(0, 0, 0, 1)',
-  backgroundColor: 'rgba(255, 255, 255, 1)',
+  speed: 15,
+  stroke: 1.99,
+  strokeColor: 'rgba(255, 206, 206, 1)',
+  backgroundColor: 'rgba(67, 60, 60, 1)',
   style: 'line'
 };
 
@@ -126,8 +126,8 @@ const sketch = () => {
     title: 'Grid',
   });
 
-  folder.addInput(params, 'cols', {min: 2, max: 50, step: 1});
-  folder.addInput(params, 'rows', {min: 2, max: 50, step: 1});
+  folder.addInput(params, 'cols', {min: 2, max: 200, step: 1});
+  folder.addInput(params, 'rows', {min: 2, max: 200, step: 1});
 
   /* Stroke folder */
   folder = pane.addFolder({
@@ -156,11 +156,11 @@ const sketch = () => {
 
     folder.addInput(params, 'freq', { 
       min: -0.01, 
-      max: 0.01
+      max: 0.1,
     });
     folder.addInput(params, 'amp', { 
       min: 0,
-      max: 1
+      max: 60
     });
 
   /* Line Cap folder */
